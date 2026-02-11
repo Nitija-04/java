@@ -1,1 +1,0 @@
-web: java -cp ".:json-20210307.jar:src" com.ecommerce.api.ProductWebApp
