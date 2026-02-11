@@ -1,5 +1,0 @@
-run = ["sh", "-c", "javac -cp .:json-20210307.jar $(find . -name '*.java') && java -cp .:json-20210307.jar:src com.ecommerce.api.ProductWebApp"]
-
-[deployment]
-build = ["sh", "-c", "javac -cp .:json-20210307.jar $(find . -name '*.java')"]
-run = ["sh", "-c", "java -cp .:json-20210307.jar:src com.ecommerce.api.ProductWebApp"]
