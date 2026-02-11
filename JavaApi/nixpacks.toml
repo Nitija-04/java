@@ -1,8 +1,0 @@
-[phases.setup]
-nixPkgs = ['openjdk17']
-
-[phases.build]
-cmds = ['javac -cp ".:json-20210307.jar" src/com/ecommerce/api/*.java']
-
-[start]
-cmd = 'java -cp ".:json-20210307.jar:src" com.ecommerce.api.ProductWebApp'
