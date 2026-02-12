@@ -1,19 +1,17 @@
-# Use Eclipse Temurin (more reliable than openjdk)
 FROM eclipse-temurin:17-jdk-alpine
 
-# Set working directory
-WORKDIR /app
+# Set working directory to JavaApi
+WORKDIR /app/JavaApi
 
-# Copy source files and library
-COPY src ./src
-COPY json-20210307.jar ./json-20210307.jar
+# Copy JavaApi folder
+COPY JavaApi/ .
 
-# Compile Java files
+# Compile
 RUN javac -cp ".:json-20210307.jar" src/com/ecommerce/api/*.java
 
-# Expose port (different platforms use different ports)
+# Expose port
 EXPOSE 8080
 ENV PORT=8080
 
-# Run the application
+# Run
 CMD ["java", "-cp", ".:json-20210307.jar:src", "com.ecommerce.api.ProductWebApp"]
